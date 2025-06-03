@@ -1,10 +1,16 @@
 import { motion } from "framer-motion";
-import { Button } from "@/components/button";
+import { useNavigate } from "react-router-dom";
 import { heroTextReveal } from "@/lib/animations";
 import heroBackground from "@/assets/webp/newhomehero-CDcRIB2C.webp";
 import magicIcon from "@/assets/svg/MagicColorFilledIcon-D2LTFJJX.svg";
 
 export function Hero() {
+  const navigate = useNavigate();
+
+  const handleScheduleDemo = () => {
+    navigate('/schedule-demo');
+  };
+
   return (
     <section className="relative min-h-screen overflow-hidden bg-black flex items-center justify-center">
       {/* Background Image */}
@@ -23,7 +29,7 @@ export function Hero() {
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={heroTextReveal}
-            className="font-manrope z-50 text-center max-sm:text-[44px] sm:text-[68px] md:text-[82px] lg:text-[90px] font-medium leading-[44px] sm:leading-[68px] md:leading-[82px] lg:leading-[100px] pb-6 sm:pb-[50px] md:mt-[-50px] mx-1"
+            className="font-manrope z-[1] text-center max-sm:text-[44px] sm:text-[68px] md:text-[82px] lg:text-[90px] font-medium leading-[44px] sm:leading-[68px] md:leading-[82px] lg:leading-[100px] pb-6 sm:pb-[50px] md:mt-[-50px] mx-1"
             style={{ 
               color: 'white',
               background: 'linear-gradient(95.91deg, rgb(255, 255, 255) 16.46%, rgb(66, 140, 252) 116.31%) text',
@@ -56,7 +62,8 @@ export function Hero() {
             className="w-fit h-fit z-[1] mx-auto"
           >
             <button 
-              className="flex items-center text-white ring-white hover:bg-white/25 ring-1 rounded-full hover:bg-blue-900 hover:text-white transition-all duration-300 ease-in-out shadow-[0_0_18px_rgba(59,130,246,0.5)] hover:shadow-[0_0_20px_rgba(59,130,246,0.7)] px-[30px] py-3 bg-transparent gap-2"
+              onClick={handleScheduleDemo}
+              className="flex items-center text-white ring-white hover:bg-white/25 ring-1 rounded-full hover:bg-blue-900 hover:text-white transition-all duration-300 ease-in-out shadow-[0_0_18px_rgba(59,130,246,0.5)] hover:shadow-[0_0_20px_rgba(59,130,246,0.7)] px-[30px] py-3 bg-transparent gap-2 z-[1] cursor-pointer"
             >
               <img 
                 src={magicIcon}

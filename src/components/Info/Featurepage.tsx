@@ -1,5 +1,6 @@
-import React from 'react';
 import { motion } from 'framer-motion';
+import ellipse540 from '@/assets/images/Ellipse540.png';
+import ellipse573 from '@/assets/images/Ellipse573.png';
 
 interface FeatureCardProps {
   icon: string;
@@ -13,12 +14,16 @@ const FeatureCard = ({ icon, text, index }: FeatureCardProps) => (
     whileInView={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.6, delay: index * 0.1 }}
     viewport={{ once: true }}
-    className="flex flex-col gap-4 items-center justify-center p-4 min-w-[200px] sm:min-w-[220px] md:min-w-[240px] lg:min-w-[260px] xl:min-w-[280px] flex-1"
+    className="flex flex-col gap-3 sm:gap-4 md:gap-5 items-center justify-center p-3 sm:p-4 lg:p-6 min-w-[160px] sm:min-w-[180px] md:min-w-[200px] lg:min-w-[220px] xl:min-w-[240px] 2xl:min-w-[260px] flex-1 relative z-10 max-w-[280px] mx-auto"
   >
     <div className="flex items-center justify-center">
-      <img src={icon} alt="feature-icon" className="w-8 h-8" />
+      <img 
+        src={icon} 
+        alt="feature-icon" 
+        className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 lg:w-9 lg:h-9" 
+      />
     </div>
-    <p className="text-center font-medium text-sm md:text-base lg:text-lg text-transparent bg-clip-text bg-gradient-to-br from-white to-blue-400 whitespace-pre-line leading-relaxed">
+    <p className="text-center font-medium text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-transparent bg-clip-text bg-gradient-to-br from-white to-blue-400 whitespace-pre-line leading-relaxed sm:leading-loose">
       {text}
     </p>
   </motion.div>
@@ -45,7 +50,21 @@ const Featurepage = () => {
   ];
 
   return (
-    <div className="flex flex-col lg:flex-row gap-4 sm:gap-6 md:gap-8 lg:gap-4 xl:gap-6 justify-center items-stretch max-w-7xl mx-auto px-4">
+    <div className="flex flex-col sm:flex-row lg:flex-row gap-4 sm:gap-3 md:gap-4 lg:gap-5 xl:gap-6 2xl:gap-8 justify-center items-stretch max-w-7xl mx-auto px-2 sm:px-4 lg:px-6 relative">
+      {/* Background Ellipses - Responsive */}
+      <img 
+        src={ellipse573} 
+        className="absolute -top-10 sm:-top-16 lg:-top-20 -left-10 sm:-left-16 lg:-left-20 opacity-10 sm:opacity-15 lg:opacity-20 z-0 scale-50 sm:scale-60 lg:scale-75" 
+        draggable="false"
+        alt=""
+      />
+      <img 
+        src={ellipse540} 
+        className="absolute -top-5 sm:-top-8 lg:-top-10 -right-10 sm:-right-16 lg:-right-20 opacity-8 sm:opacity-12 lg:opacity-15 z-0 scale-25 sm:scale-40 lg:scale-50" 
+        draggable="false"
+        alt=""
+      />
+      
       {features.map((feature, index) => (
         <FeatureCard key={index} icon={feature.icon} text={feature.text} index={index} />
       ))}
