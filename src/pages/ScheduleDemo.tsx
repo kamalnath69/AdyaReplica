@@ -20,8 +20,7 @@ export function ScheduleDemo() {
     formData, 
     selectedRevenue, 
     isSubmitting, 
-    error, 
-    isSuccess 
+    error
   } = useSelector((state: RootState) => state.scheduleDemo);
 
   const handleInputChange = (field: string, value: string) => {

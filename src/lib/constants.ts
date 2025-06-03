@@ -1,6 +1,5 @@
 import { 
   BarChart4, 
-  Code, 
   Database, 
   Globe, 
   Layers, 
