@@ -5,7 +5,7 @@ interface InfoSectionProps {
   reverse?: boolean;
 }
 
-export function InfoSection({ reverse = false }: InfoSectionProps) {
+export function LastInfoSection({ reverse = false }: InfoSectionProps) {
   return (
     <section className="bg-black py-20">
       <div className="container mx-auto px-4">

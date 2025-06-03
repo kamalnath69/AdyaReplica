@@ -1,15 +1,16 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { Navbar } from "@/components/navbar";
-import { Hero } from "@/components/hero";
-import { PlatformOverview } from "@/components/platform-overview";
+import { Navbar } from "@/components/Header/navbar";
+import { Hero } from "@/components/Hero/hero";
 import { SolutionsOverview } from "@/components/solutions-overview";
 import { TrustedBy } from "@/components/trusted-by";
-import { InfoSection } from "@/components/info-section";
+import { LastInfoSection } from "@/components/LastInfoSection";
 import { Features } from "@/components/features";
 import { Solutions } from "@/components/solutions";
 import { CTA } from "@/components/cta";
 import { Footer } from "@/components/footer";
 import { ThemeProvider } from "@/components/theme-provider";
+import InfoSection from "./components/Info/InfoSection";
+import FullStackAI from "./components/FullStackAi";
 
 function App() {
   return (
@@ -23,13 +24,13 @@ function App() {
           <Navbar />
           <main>
             <Hero />
-            <PlatformOverview />
+            <InfoSection/>
+            <FullStackAI/>
             <SolutionsOverview />
             <TrustedBy />
-            <InfoSection />
+            <LastInfoSection/>
             <Features />
             <Solutions />
-            <InfoSection reverse />
             <CTA />
           </main>
           <Footer />
