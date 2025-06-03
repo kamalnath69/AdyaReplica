@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import eyeLogo from '@/assets/svg/eye-logo.svg';
-import vanijThumbnail from '@/assets/images/vanij-thumbnail.png';
 import Featurepage from './Featurepage';
 import agentsNetworkImage from '@/assets/images/agent-network.png';
 import ellipse4 from '@/assets/images/Ellipse4.png';
