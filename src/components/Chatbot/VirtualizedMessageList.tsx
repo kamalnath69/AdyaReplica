@@ -217,10 +217,13 @@ export const VirtualizedMessageList: React.FC<VirtualizedMessageListProps> = ({
           ref: (list: List | null) => void;
         }) => (
           <List
-            ref={(list: List | null) => {
-              listRef.current = list;
+            ref={(list) => {
+              if (listRef.current !== list) {
+                (listRef as React.MutableRefObject<List | null>).current = list;
+              }
               ref(list);
             }}
+            width="100%"
             height={isLoading && hasMore ? 277 : 300}
             itemCount={itemCount}
             itemSize={getItemSize}
