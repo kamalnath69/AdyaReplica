@@ -1,6 +1,6 @@
 import { Message, ChatResponse, PaginationParams } from '../types/chat';
 
-const API_BASE_URL = 'http://localhost:3001/api';
+const API_BASE_URL = 'https://adyareplicabe.onrender.com';
 
 export const chatApi = {
   async sendMessage(content: string, sessionId?: string): Promise<Message> {
