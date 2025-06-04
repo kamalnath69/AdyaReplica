@@ -56,14 +56,14 @@ export const VirtualizedMessageList: React.FC<VirtualizedMessageListProps> = ({
   }, [reversedMessages]);
 
   // Load more items when scrolling to the top (older messages)
-  const loadMoreItems = useCallback(async (startIndex: number, stopIndex: number) => {
+  const loadMoreItems = useCallback(async (startIndex: number) => {
     if (startIndex === 0 && hasMore && !isLoading) {
       loadMore();
     }
   }, [hasMore, isLoading, loadMore]);
 
   // Handle scroll - simplified without using private methods
-  const handleScroll = useCallback(({ scrollOffset }: { scrollOffset: number; scrollDirection: string }) => {
+  const handleScroll = useCallback(() => {
     // Simple scroll detection - we'll rely on auto-scroll behavior instead
     // of complex scroll position calculations
   }, []);
