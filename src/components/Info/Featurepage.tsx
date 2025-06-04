@@ -14,7 +14,7 @@ const FeatureCard = ({ icon, text, index }: FeatureCardProps) => (
     whileInView={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.6, delay: index * 0.1 }}
     viewport={{ once: true }}
-    className="flex flex-col gap-3 sm:gap-4 md:gap-5 items-center justify-center p-3 sm:p-4 lg:p-6 min-w-[160px] sm:min-w-[180px] md:min-w-[200px] lg:min-w-[220px] xl:min-w-[240px] 2xl:min-w-[260px] flex-1 relative z-10 max-w-[280px] mx-auto"
+    className="flex flex-col gap-3 sm:gap-4 md:gap-5 items-center justify-center p-3 sm:p-4 lg:p-6 w-full relative z-10"
   >
     <div className="flex items-center justify-center">
       <img 
@@ -50,7 +50,7 @@ const Featurepage = () => {
   ];
 
   return (
-    <div className="flex flex-col sm:flex-row lg:flex-row gap-4 sm:gap-3 md:gap-4 lg:gap-5 xl:gap-6 2xl:gap-8 justify-center items-stretch max-w-7xl mx-auto px-2 sm:px-4 lg:px-6 relative">
+    <div className="flex flex-col justify-center items-center max-w-7xl mx-auto px-2 sm:px-4 lg:px-6 relative">
       {/* Background Ellipses - Responsive */}
       <img 
         src={ellipse573} 
@@ -65,9 +65,12 @@ const Featurepage = () => {
         alt=""
       />
       
-      {features.map((feature, index) => (
-        <FeatureCard key={index} icon={feature.icon} text={feature.text} index={index} />
-      ))}
+      {/* Mobile: 1 column, SM: 2x2 grid, MD+: 4 in a row */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-4 lg:gap-6 xl:gap-8 w-full">
+        {features.map((feature, index) => (
+          <FeatureCard key={index} icon={feature.icon} text={feature.text} index={index} />
+        ))}
+      </div>
     </div>
   );
 };
